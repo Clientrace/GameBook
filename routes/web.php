@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "clarence";
 });
+
+Route::get('login','LoginController@about');
