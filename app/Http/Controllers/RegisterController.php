@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use Carbon\Carbon;
 
+use App\Account;
+
 class RegisterController extends Controller
 {
     //Registration Page Controller
@@ -19,9 +21,17 @@ class RegisterController extends Controller
     	return view("pages.register", compact('year'));
     }
 
-    public function sphtore(Request $request){
-    	$account = new Accounts();
-    	$account->username = $request[''];
+    public function store(Request $request){
+    	$account = new Account;
+    	$account->username = $request['username'];
+    	$account->password = $request['password'];
+    	if($request['type']=="USER")
+    		$account->type = 0;
+    	else if($request['type']=="DEVELOPER")
+    		$account->type = 1;
+    	$account->created = Carbon::now();
+    	$account->save();
+    	return $account->all();
     }
 
 }

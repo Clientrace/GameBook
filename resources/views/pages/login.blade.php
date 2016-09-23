@@ -6,7 +6,7 @@
 	<form role="form" method="POST" action="/login">
 		<div class="form-group">
 
-			<input type="text" class="form-control" name="name" 
+			<input type="text" class="form-control" name="username" 
 				id="name" placeholder="Enter username">
 
 			<input type="password" class="form-control" name="password"

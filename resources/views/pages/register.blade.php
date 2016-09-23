@@ -49,7 +49,7 @@
 
 			<label for="type">Account Type</label>
 
-			<select class="form-control">
+			<select class="form-control" name="type">
 				<option>USER</option>
 				<option>DEVELOPER</option>
 			</select>
