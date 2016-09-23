@@ -15,4 +15,6 @@ Route::get('/', function () {
     return "clarence";
 });
 
-Route::get('login','LoginController@about');
+Route::get('register','RegisterController@index');
+
+Route::post('register','RegisterController@store');
