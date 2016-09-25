@@ -13,6 +13,8 @@
 				@if (count($errors) > 1)
 					@if (strpos($errorlist,'null_uname'))
 						<span class="badge">This Field is required</span>
+					@elseif (strpos($errorlist,'uname0'))
+						<span class="badge">Username is too short</span>
 					@endif
 				@endif
 				
