@@ -6,10 +6,7 @@
 	@if ($regi==true)
 		<h2> Registered Succesfully! </h2>
 	@endif
-	<div class="container">
-		Connect to every gamers in the world!
-	</div>
-	<div class="container" style="width: 500px; height: 400px; float:right;">
+	<div class="container" style="width: 40%; margin-top:5%;">
 		<form role="form" method="POST" action="/home">
 			<div class="form-group">
 

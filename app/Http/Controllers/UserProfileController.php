@@ -6,22 +6,19 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Account;
-
 use App\UserInfo;
 
+use App\Account;
 
-class LoginController extends Controller
+class UserProfileController extends Controller
 {
-    //
     public function index(Request $request){
-    	$regi = false;
-    	$log = $request->session()->get('log');
     	$id = $request->session()->get('userid');
     	$user = UserInfo::where("user_id",$id)->get();
-    	if($log)
-    		return view('pages.home',compact('log','user'));
-    	return view('pages.login',compact('regi'));
+    	$acc = Account::find($id);
+    	return view("pages.user_profile",compact('user','acc'));
     }
-
+    public function store(Request $request){
+    	$file = $request('file');
+    }
 }

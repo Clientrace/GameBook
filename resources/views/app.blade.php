@@ -43,7 +43,8 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div class="container">
+
+	<div class="container" style="margin-top:-2%;">
 		@yield('content')
 		<script src="js/bootstrap.min.js"></script>
 	</div>
@@ -51,7 +52,7 @@
 
 <footer>
 	@yield('footer')
-	<div class="container" style="width:500px;">
+	<div class="container" style="width:500px; margin-top:5%;">
 		Copyright Gamebook (c) 2016
 		Project Management Final Project
 		<a href="">Developers</a> |

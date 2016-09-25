@@ -30,3 +30,9 @@ Route::post('upload','GameUploadController@store');
 Route::get('logout','MainController@logout');
 
 Route::get('userprofile','UserProfileController@index');
+
+Route::post('userprofile','UserProfileController@store');
+
+Route::get('game','GameController@index');
+
+
