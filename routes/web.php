@@ -21,4 +21,10 @@ Route::post('register','RegisterController@store');
 
 Route::get('login','LoginController@index');
 
-Route::post('login','LoginController@login');
+Route::get('home','HomeController@index');
+
+Route::post('home','HomeController@login');
+
+Route::get('upload','GameUploadController@index');
+
+Route::post('upload','GameUploadController@store');

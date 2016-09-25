@@ -3,15 +3,24 @@
 <title>GameBook</title>
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
 </head>
+
+<header>
+	@yield('header')
+</header>
 
 <body>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<h2>GameBook</h2>
-	@yield('content')
-	<script src="js/bootstrap.min.js"></script>
+	<div class="container">
+		<h2>GameBook</h2>
+		@yield('content')
+		<script src="js/bootstrap.min.js"></script>
+	</div>
 </body>
+
+<footer>
+	@yield('footer')
+</footer>
 
 </html>

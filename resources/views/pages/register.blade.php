@@ -2,25 +2,29 @@
 
 @section('content')
 
-<div class="row">
+<div class="container" style="width:500px;">
 	<form role="form" method="POST" action="/register">
 		<div class="form-group">
-			<input type="text" class="form-control" name="first_name"
-				id="name" placeholder="Enter firstname">
+			<label for="type">User Info</label>
+			<div class="container">
+				<input type="text" class="form-control" name="first_name"
+					id="name" placeholder="Enter firstname">
 
-			<input type="text" class="form-control" name="last_name"
-				id="lastname" placeholder="Enter lastname">
+				<input type="text" class="form-control" name="last_name"
+					id="lastname" placeholder="Enter lastname">
+			</div>
 
-			<input type="text" class="form-control" name="username" 
-				id="username" placeholder="Enter username">
+			<div class="container">
+				<input type="text" class="form-control" name="username" 
+					id="username" placeholder="Enter username">
 
-			<input type="password" class="form-control" name="password"
-				id="pass" placeholder="Enter password">
-
+				<input type="password" class="form-control" name="password"
+					id="pass" placeholder="Enter password">
+			</div>
 
 			<label for="birthday">Birthdate</label>
 
-			<select class="form-control">
+			<select name="month" class="form-control">
 				<option>January</option>
 				<option>February</option>
 				<option>March</option>
@@ -35,13 +39,13 @@
 				<option>December</option>
 			</select>
 
-			<select class="form-control">
+			<select name="day" class="form-control">
 				@for ($i=1;$i<32;$i++)
 					<option>{{$i}}</option>
 				@endfor
 			</select>
 
-			<select class="form-control">
+			<select name="year" class="form-control">
 				@for ($i=0;$i<100;$i++)
 					<option>{{$year-$i}}</option>
 				@endfor
@@ -54,7 +58,7 @@
 				<option>DEVELOPER</option>
 			</select>
 
-			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn">Login</button>
+			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn">Submit</button>
 		</div>
 	</form>
 </div>

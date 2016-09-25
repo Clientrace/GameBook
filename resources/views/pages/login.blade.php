@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="row">
-	<form role="form" method="POST" action="/login">
+<div class="container">
+	<form role="form" method="POST" action="/home">
 		<div class="form-group">
 
 			<input type="text" class="form-control" name="username" 

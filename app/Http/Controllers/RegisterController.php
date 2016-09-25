@@ -10,6 +10,8 @@ use Carbon\Carbon;
 
 use App\Account;
 
+use App\UserInfo;
+
 class RegisterController extends Controller
 {
     //Registration Page Controller
@@ -31,7 +33,17 @@ class RegisterController extends Controller
     		$account->type = 1;
     	$account->created = Carbon::now();
     	$account->save();
-    	return $account->all();
+
+        $userinfo = new UserInfo;
+        $userinfo->user_id = $account->id;
+        $userinfo->first_name = $request['first_name'];
+        $userinfo->last_name = $request['last_name'];
+        $userinfo->experience = 0;
+        $birthdate = $request['month']." ".$request['day']." ".$request['year'];
+    	$userinfo->birthdate = $birthdate;
+        $userinfo->save();
+
+        return $userinfo->all();
     }
 
 }

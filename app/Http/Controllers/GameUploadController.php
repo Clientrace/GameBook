@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Account;
-
-
-class LoginController extends Controller
+class GameUploadController extends Controller
 {
-    //
     public function index(){
-    	return view('pages.login');
+    	return view('pages.game_upload');
     }
 
+    public function store(){
+
+    }
 }
