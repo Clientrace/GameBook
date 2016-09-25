@@ -31,7 +31,7 @@ Route::get('logout','MainController@logout');
 
 Route::get('userprofile','UserProfileController@index');
 
-Route::post('userprofile','UserProfileController@store');
+Route::post('userprofile','UserProfileController@updatePic');
 
 Route::get('game','GameController@index');
 

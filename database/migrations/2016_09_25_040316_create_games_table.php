@@ -22,6 +22,7 @@ class CreateGamesTable extends Migration
             $table->integer('dislikes');
             $table->string('description');
             $table->string('genre');
+            $table->string('picname');
             $table->timestamp('date_created');
             $table->timestamps();
         });

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-	@if ($regi==true)
+	@if ($regi)
 		<h2> Registered Succesfully! </h2>
 	@endif
 	<div class="container" style="width: 40%; margin-top:5%;">

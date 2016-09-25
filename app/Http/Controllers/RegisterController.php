@@ -100,9 +100,12 @@ class RegisterController extends Controller
         $userinfo->experience = 0;
         $birthdate = $request['month']." ".$request['day']." ".$request['year'];
     	$userinfo->birthdate = $birthdate;
+        $userinfo->picname = "dp.jpg";
         $userinfo->save();
 
-        return view("pages.login");
+        $regi = true;
+
+        return view("pages.login",compact('regi'));
     }
 
 }

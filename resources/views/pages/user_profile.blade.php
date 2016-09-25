@@ -7,10 +7,13 @@
 	<div class="row">
 		<div class="col-md-6 col-lg-4">
 			<div class="well" style="height:450px;">
-				<img src="assets/dp.jpg" class="img-circle" style="width:150px;height:150px;">
+				<img src="assets/userdp/{{$user[0]->picname}}" class="img-circle" style="width:150px;height:150px;">
+				
 				<form method="POST" action="/userprofile" enctype="multipart/form-data">
 					<input name="file" type="file"/>
+					<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn btn-primary btn-sm">Upload</button>
 				</form>
+
 				<h3> {{$acc->username}} </h4>
 				<h5> {{$user[0]->first_name}} {{$user[0]->last_name}}</h3>
 				@if($user[0]->experience<1000)

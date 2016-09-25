@@ -19,7 +19,7 @@ class HomeController extends Controller
         $log = $request->session()->get('log');
 
         if($log==false)
-            return view("pages.main",compact('log'));
+            return redirect("/");
 
         $account = Account::find($userid);
         $user = UserInfo::where('user_id',$userid)->get();

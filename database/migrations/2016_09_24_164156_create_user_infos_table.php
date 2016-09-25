@@ -19,6 +19,7 @@ class CreateUserInfosTable extends Migration
             $table->string('last_name');
             $table->integer('experience');
             $table->date('birthdate');
+            $table->string('picname');
             $table->timestamps();
         });
     }
