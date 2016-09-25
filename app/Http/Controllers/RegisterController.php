@@ -23,7 +23,7 @@ class RegisterController extends Controller
         $errorlist = "none";
     	return view("pages.register", compact('year'),compact('errorlist'));
     }
-
+    
     /*
         Check Information Provided
         Errors:
@@ -34,6 +34,7 @@ class RegisterController extends Controller
             4 = Username length
             5 = password length
     */
+
     public function store(Request $request){
         $errorlist = "none";
 
