@@ -35,15 +35,7 @@ class RegisterController extends Controller
             5 = password length
     */
     public function store(Request $request){
-        $errorlist = "";
-
-        $unames = Account::where('username',$request['username'])->get();
-        if(count($unames)>0)
-            $errorlist = $errorlist."uname1,";
-
-        if($request['username']==null){
-            $errorlist = $errorlist."null_uname,";
-        }
+        $errorlist = "none";
 
         if($request['password']==null){
             $errorlist = $errorlist."null_pass,";
@@ -68,18 +60,26 @@ class RegisterController extends Controller
         if(strlen($request['password'])<8)
             $errorlist = $errorlist."pass0,";
 
+        $unames = Account::where('username',$request['username'])->get();
+        
+        if(count($unames)>0)
+            $errorlist = $errorlist."uname1,";
+
         if(strlen($request['username'])<5)
             $errorlist = $errorlist."uname0,";
+
+         if($request['username']==null){
+            $errorlist = $errorlist."null_uname,";
+        }
 
         if($request['accept']!='on')
             $errorlist = $errorlist."accept,";
 
-        $errors = preg_split("{,}", $errorlist);
-        if(count($errors)>1){
+        if($errorlist!='none'){
             $date = Carbon::now();
             $splitDate = preg_split('{-}', $date);
             $year = (int) $splitDate[0];
-            return view("pages.register",compact('year','errorlist','errors'));
+            return view("pages.register",compact('year','errorlist'));
         }
 
     	$account = new Account;

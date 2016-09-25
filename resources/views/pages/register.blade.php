@@ -10,18 +10,22 @@
 			<label for="birthday">Name:</label>
 			<div class="container" style="width:400px;">
 				
-				@if (count($errors) > 1)
+				
+
+				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_uname'))
 						<span class="badge">This Field is required</span>
 					@elseif (strpos($errorlist,'uname0'))
-						<span class="badge">Username is too short</span>
+						<span class="badge">Username too short</span>
+					@elseif (strpos($errorlist,'uname1'))
+						<span class="badge">Username already taken</span>
 					@endif
 				@endif
 				
 				<input type="text" class="form-control" name="username" 
 					id="username" placeholder="Enter username">
 
-				@if (count($errors) > 1)
+				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_firstname'))
 						<span class="badge">This Field is required</span>
 					@endif
@@ -31,7 +35,7 @@
 					id="name" placeholder="Enter firstname">
 
 
-				@if (count($errors) > 1)
+				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_lastname'))
 						<span class="badge">This Field is required</span>
 					@endif
@@ -43,7 +47,7 @@
 			<label for="birthday">Password:</label>
 			<div class="container" style="width:400px;">
 
-				@if (count($errors) > 1)
+				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_pass'))
 						<span class="badge">This Field is required</span>
 					@elseif (strpos($errorlist,'pass0'))
@@ -56,7 +60,7 @@
 				<input type="password" class="form-control" name="password"
 					id="pass" placeholder="Enter password">
 
-				@if (count($errors) > 1)
+				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_cpass'))
 						<span class="badge">This Field is required</span>
 					@endif
@@ -117,7 +121,7 @@
 			<div class="checkbox">
 				<label>
 					<input type="checkbox" name="accept"> I accept <a href>Terms & Conditions</a>
-					@if (count($errors) > 1)
+					@if ($errorlist!='none')
 						@if (strpos($errorlist,'accept'))
 							<span class="badge">You must accept our terms & conditions</span>
 						@endif
