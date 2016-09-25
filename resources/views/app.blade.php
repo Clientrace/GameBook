@@ -21,6 +21,14 @@
 
 <footer>
 	@yield('footer')
+	<div class="container" style="width:500px;">
+		Copyright Gamebook (c) 2016
+		( Project Management Final Project )
+		<a href="">Developers</a> |
+		<a href="">About</a> |
+		<a href="">FAQ</a> |
+		<a href="">Manual</a> |
+	</div>
 </footer>
 
 </html>

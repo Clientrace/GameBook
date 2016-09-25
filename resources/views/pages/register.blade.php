@@ -5,8 +5,13 @@
 <div class="container" style="width:500px;">
 	<form role="form" method="POST" action="/register">
 		<div class="form-group">
-			<label for="type">User Info</label>
-			<div class="container">
+			<h3>Register!</h3>
+
+			<label for="birthday">Name:</label>
+			<div class="container" style="width:400px;">
+				<input type="text" class="form-control" name="username" 
+					id="username" placeholder="Enter username">
+					
 				<input type="text" class="form-control" name="first_name"
 					id="name" placeholder="Enter firstname">
 
@@ -14,51 +19,71 @@
 					id="lastname" placeholder="Enter lastname">
 			</div>
 
-			<div class="container">
-				<input type="text" class="form-control" name="username" 
-					id="username" placeholder="Enter username">
-
+			<label for="birthday">Password:</label>
+			<div class="container" style="width:400px;">
 				<input type="password" class="form-control" name="password"
 					id="pass" placeholder="Enter password">
+
+				<input type="password" class="form-control" name="cpassword"
+					id="cpass" placeholder="Confirm password">
 			</div>
 
-			<label for="birthday">Birthdate</label>
-
-			<select name="month" class="form-control">
-				<option>January</option>
-				<option>February</option>
-				<option>March</option>
-				<option>April</option>
-				<option>May</option>
-				<option>June</option>
-				<option>July</option>
-				<option>August</option>
-				<option>September</option>
-				<option>October</option>
-				<option>November</option>
-				<option>December</option>
-			</select>
-
-			<select name="day" class="form-control">
-				@for ($i=1;$i<32;$i++)
-					<option>{{$i}}</option>
-				@endfor
-			</select>
-
-			<select name="year" class="form-control">
-				@for ($i=0;$i<100;$i++)
-					<option>{{$year-$i}}</option>
-				@endfor
-			</select>
+			<label for="birthday">Birthdate: </label>
+			<div class="container" style="width:400px;">
+				<div class="btn-group">
+					<select name="month" class="form-control" style="width:120px;">
+						<option>January</option>
+						<option>February</option>
+						<option>March</option>
+						<option>April</option>
+						<option>May</option>
+						<option>June</option>
+						<option>July</option>
+						<option>August</option>
+						<option>September</option>
+						<option>October</option>
+						<option>November</option>
+						<option>December</option>
+					</select>
+				</div>
+				<div class="btn-group">
+					<select name="day" class="form-control" style="width:100px;">
+						@for ($i=1;$i<32;$i++)
+							<option>{{$i}}</option>
+						@endfor
+					</select>
+				</div>
+				<div class="btn-group">
+					<select name="year" class="form-control" style="width:100px;">
+						@for ($i=0;$i<100;$i++)
+							<option>{{$year-$i}}</option>
+						@endfor
+					</select>
+				</div>
+			</div>
 
 			<label for="type">Account Type</label>
+			<div class="containter">
+				<div class="btn-group">
 
-			<select class="form-control" name="type">
-				<option>USER</option>
-				<option>DEVELOPER</option>
-			</select>
+					<label class="btn btn-primary">
+						<input type="radio" name="options" id="option1" checked="checked" value="USER"> USER
+					</label>
 
-			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn">Submit</button>
+					<label class="btn btn-primary">
+						<input type="radio" name="options" id="option2" value="DEVELOPER"> DEVELOPER
+					</label>
+
+				</div>
+			</div>
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox"> I accept Terms & Conditions
+				</label>
+			</div>
+
+			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn btn-primary btn-lg">Submit</button>
 		</div>
 	</form>
 </div>
