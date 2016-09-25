@@ -4,17 +4,17 @@
 
 <div class="container" style="width:60%;">
 	<h3>Game Upload!</h3>
+	<div class="well">
+		<label>JAVASCRIPT GAME</label><br>
+		Upload ZIP javascript game with proper file structure: <a href="">see here</a>
+		<img src="assets/system/directory.png" class="img-thumbnail" style="width:100;height:150">
+		<form method="POST" action="/upload" enctype="multipart/form-data">
+			<input name="file" type="file"/>
+			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn btn-primary btn-sm">Upload</button>
+		</form>
+	</div>
 	<form role="form" method="POST" action="/upload">
 		<div class="form-group">
-			<div class="well">
-				<label>JAVASCRIPT GAME</label><br>
-				Upload ZIP javascript game with proper file structure: <a href="">see here</a>
-				<img src="assets/system/directory.png" class="img-thumbnail" style="width:100;height:150">
-				<form method="POST" action="/upload" enctype="multipart/form-data">
-					<input name="file" type="file"/>
-					<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn btn-primary btn-sm">Upload</button>
-				</form>
-			</div>
 			<div class="well">
 				<label>GAME LOGO</label><br>
 				<img src="assets/system/controller.png" class="img-thumbnail" style="width:100px;height:100px;">
