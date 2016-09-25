@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return "clarence";
-});
+Route::get('/', 'MainController@index');
 
 Route::get('register','RegisterController@index');
 
@@ -28,3 +26,7 @@ Route::post('home','HomeController@login');
 Route::get('upload','GameUploadController@index');
 
 Route::post('upload','GameUploadController@store');
+
+Route::get('logout','MainController@logout');
+
+Route::get('userprofile','UserProfileController@index');

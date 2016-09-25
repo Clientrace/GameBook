@@ -9,8 +9,6 @@
 
 			<label for="birthday">Name:</label>
 			<div class="container" style="width:400px;">
-				
-				
 
 				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_uname'))
@@ -136,3 +134,12 @@
 
 
 @stop
+
+@section('nav')
+	<li><a href="/">HOME</a></li>
+	<li><a href="/login">SIGN IN</a></li>
+	<li class="active"><a href="/register">SIGN UP<span class="sr-only">(current)</span></a></li>
+@stop
+
+
+

@@ -1,9 +1,15 @@
 @extends('app')
 
 @section('content')
+<h2>Welcome!</h2>
+Play now with the lastest and hotest game in the web!<br>
+<div class="well">
+	<label>TOP GAMES</label>
+</div>
 
-
-	
+<div class="well">
+	<label>RECENTLY ADDED</label>
+</div>
 
 @stop
 

@@ -13,7 +13,8 @@ class LoginController extends Controller
 {
     //
     public function index(){
-    	return view('pages.login');
+    	$regi = false;
+    	return view('pages.login',compact('regi'));
     }
 
 }

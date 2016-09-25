@@ -102,7 +102,7 @@ class RegisterController extends Controller
     	$userinfo->birthdate = $birthdate;
         $userinfo->save();
 
-        return $userinfo->all();
+        return view("pages.login");
     }
 
 }
