@@ -34,7 +34,7 @@ The games here are developed by opensource developer. Enjoy their game and have 
 						<div class="col-md-3" style="width:30%;">
 							<div class="well">
 								<label> {{$game->name}} </label><br>
-								<a href="/game/{{$game->id}}"><img src="assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a><br>
+								<a href="/game/{{$game->id}}"><img src="/assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a><br>
 								<span class="badge">{{$game->genre}}</span><br>
 								<a href="/play/{{$game->name}}" class="btn btn-primary" role="button" style="width:100%">Play!</a>
 							</div>

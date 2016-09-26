@@ -39,7 +39,7 @@ Route::get('userprofile','UserProfileController@index');
 
 Route::post('userprofile','UserProfileController@updatePic');
 
-Route::get('game','GameController@index');
+Route::get('game/{id}','GameProfileController@index');
 
 Route::get('play/{name}','PlayController@index');
 

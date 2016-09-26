@@ -30,6 +30,11 @@ class MainController extends Controller
     	$request->session()->put('log',false);
     	$log = false;
 
-    	return view("pages.main",compact('log'));
+        $topgames = Game::all();
+
+        $recentgames = Game::all();
+
+        $user = UserInfo::where("user_id",$id)->get();
+    	return view("pages.main",compact('log','user','topgames','recentgames'));
     }
 }
