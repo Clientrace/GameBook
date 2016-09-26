@@ -100,7 +100,7 @@ class RegisterController extends Controller
         $userinfo->experience = 0;
         $birthdate = $request['month']." ".$request['day']." ".$request['year'];
     	$userinfo->birthdate = $birthdate;
-        $userinfo->picname = "dp.jpg";
+        $userinfo->picname = "dp-default.png";
         $userinfo->save();
 
         $regi = true;

@@ -34,8 +34,8 @@
 			<div class="well" style="width:80%;">
 				<div class="row">
 					<?php $commentor = $accs->find($comment->userid); ?>
-					<?php $commentorinfo = $accsinfo->where('user_id',$commentor->id);?>
-					<img src="/assets/userdp/{{$commentorinfo[0]->picname}}" class="img-circle" style="width:5%;height:5%;">
+					<?php $commentorinfo = $accsinfo->where('user_id',$commentor->id)->first();?>
+					<img src="/assets/userdp/{{$commentorinfo->picname}}" class="img-circle" style="width:5%;height:5%;">
 					<label>{{$commentor->username}} : </label>
 					{{$comment->description}}
 				</div>
