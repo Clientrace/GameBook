@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-6 col-lg-4">
 			<div class="well" style="height:450px;">
-				<img src="assets/userdp/{{$user[0]->picname}}" class="img-circle" style="width:150px;height:150px;">
+				<img src="assets/userdp/{{$user[0]->picname}}" class="img-thumbnail" style="width:200px;height:200px;">
 				
 				<form method="POST" action="/userprofile" enctype="multipart/form-data">
 					<input name="file" type="file"/>

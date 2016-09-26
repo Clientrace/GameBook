@@ -13,15 +13,18 @@ class GameUploadController extends Controller
     }
 
     public function store(Request $request){
-    	$filename = "temp/"+$request->file('file')->getClientOriginalName();
+    	$filename = "game_upload/"+$request->file('file')->getClientOriginalName();
     	if ($request->file('file')->isValid()) {
     		$done = false;
-    		$request->file('file')->move("temp/", "game.zip");
+    		$request->file('file')->move("game_upload/", "game.zip");
 		}
 
     	$zip = new \ZipArchive();
-    	$zip->open("temp/game.zip");
-    	$zip->extractTo('temp/');
-    	$zip->close();
+    	$res = $zip->open("game_upload/game.zip");
+        if($res){
+            $zip->extractTo('game_uploads');
+            $zip->close();
+        }
+        unlink("game_upload/game.zip");
     }
 }
