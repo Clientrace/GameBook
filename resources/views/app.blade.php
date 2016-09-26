@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
-<title>Gamebook</title>
 <head>
 	<meta charset="UTF-8">
+	<title>Gamebook</title>
+	<link rel="icon" type="image/gif" href="/assets/system/logo-2.jpg" />
 	<link href="/css/app.css" rel="stylesheet">
 </head>
 
@@ -11,6 +12,9 @@
 </header>
 
 <body>
+	<div style="background-color:#222222;">
+		<font style="color:white;">2016</font>
+	</div>
 	<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">

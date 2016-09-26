@@ -68,6 +68,7 @@ class GameUploadController extends Controller
         $game->reviewed = false;
         $game->date_created = Carbon::now();
         $game->save();
+        
         $page = 3;
         return view('pages.game_upload',compact('page'));
     }

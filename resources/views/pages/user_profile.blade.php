@@ -2,11 +2,11 @@
 
 @section('content')
 
-<h2> Profile </h2>
+<h2><img src="assets/system/profile-icon.png" style="width:5%;height:5%;"> Profile </h2>
 <div class="container">
 	<div class="well">
 		<div class="row">
-			<div class="col-md-6 col-lg-4">
+			<div class="col-md-3">
 				<div class="well" style="height:450px;">
 					<img src="assets/userdp/{{$user[0]->picname}}" class="img-thumbnail" style="width:200px;height:200px;">
 					
@@ -31,8 +31,14 @@
 
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-8">
-				<div class="well" style="height:450px;">
+			<div class="col-md-9">
+				<div class="well">
+					<b>Reviews </b>
+				</div>
+				<div class="well">
+					<b>Likes </b>
+				</div>
+				<div class="well">
 					<b>Games Played </b>
 				</div>
 			</div>

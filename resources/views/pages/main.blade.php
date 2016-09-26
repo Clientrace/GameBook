@@ -2,16 +2,22 @@
 
 @section('content')
 <h2>Play For <b><i>FREE</i></b></h2>
+<img src="/assets/system/playfree.png" class="img-thumbnail" style="width:40px;height:40px;">
 The games here are developed by opensource developer. Enjoy their game and have fun!
 <div class="row">
 
 	<div class="col-md-3">
 		<div class="well">
-			Genre<br>
-			<a href=""><i> Top Game </i></a><br>
-			<a href=""><i> Puzzle </i></a><br>
-			<a href=""><i> Action </i></a><br>
-			<a href=""><i> Strategy </i></a>
+			Links<br>
+			<div class="well">
+				<a href=""><i> Top Games </i></a><br>
+				<a href=""><i> Puzzle </i></a><br>
+				<a href=""><i> Action </i></a><br>
+				<a href=""><i> Strategy </i></a><br><br>
+			</div>
+			<div style="align:center;">
+				<img src="/assets/system/controller-big.png" style="width:60%;height:50%;">
+			</div>
 		</div>
 	</div>
 
@@ -19,12 +25,17 @@ The games here are developed by opensource developer. Enjoy their game and have 
 		<div class="well">
 			<div class="well">
 				<div style="text-align:center;">
-					<h2>Welcome!</h2>
+					<img src="/assets/system/banner.jpg" class="img-thumbnail" style="width:100%;height:30%;">
+					<h3>Welcome!</h3>
 					Play now with the lastest and hotest game in the web!<br>
 					If your a developer you can showcase your webgame here<br>
-
-					<i>"Those who live with a sword, die by the sword"</i>
-				</div>
+					<i>"Those who live with a sword, die by the sword"</i><br>
+					<label>Key Sponsors:</label><br>
+				<img src="/assets/system/github.png"  style="width:10%;height:10%;">
+				<img src="/assets/system/gitlab.png"  style="width:10%;height:10%;">
+				<img src="/assets/system/javascript.png"  style="width:10%;height:10%;">
+				</div><br>
+				
 			</div>
 			<label><i>TOP GAMES</i></label>
 			<div class="well">
@@ -43,11 +54,6 @@ The games here are developed by opensource developer. Enjoy their game and have 
 					@endforeach
 				</div>
 			</div>
-		</div>
-
-		<div class="well">
-			<label>RECENTLY ADDED</label>
-			
 		</div>
 	</div>
 

@@ -22,11 +22,35 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
 <div class="well">
 	<label>Comment Section</label>
+	<div class="well" style="overflow:scroll;height:200px;">
+		@foreach ($comments as $comment)
+			<div class="well" style="width:80%;">
+				<div class="row">
+					<?php $commentor = $accs->find($comment->userid); ?>
+					<?php $commentorinfo = $accsinfo->where('user_id',$commentor->id);?>
+					<img src="/assets/userdp/{{$commentorinfo[0]->picname}}" class="img-circle" style="width:5%;height:5%;">
+					<label>{{$commentor->username}} : </label>
+					{{$comment->description}}
+				</div>
+				<div class="row">
+					<span class="badge">{{$comment->date_created}}</span>
+				</div>
+			</div>
+		@endforeach
+	</div>
+	<div class="well" style="width:60%;">
+		<form role="form" method="POST" action="/game/{{$game->id}}">
+			<div class="form-group">
+				<textarea class="form-control" name="description" 
+					id="name" placeholder="Add a comment"></textarea>
+			</div>
+			<button type="submit" name="_token" value="{{ csrf_token() }}" class="btn btn-primary">Comment</button>
+		</form>
+	</div>
 </div>
 
 @stop

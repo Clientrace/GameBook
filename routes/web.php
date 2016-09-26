@@ -41,6 +41,8 @@ Route::post('userprofile','UserProfileController@updatePic');
 
 Route::get('game/{id}','GameProfileController@index');
 
+Route::post('game/{id}','GameProfileController@addcomment');
+
 Route::get('play/{name}','PlayController@index');
 
 
