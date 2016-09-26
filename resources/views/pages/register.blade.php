@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class="container" style="width:500px;">
+<div class="container" style="width:60%;">
 	<form role="form" method="POST" action="/register">
 		<div class="form-group">
 			<h3><b>Register!</b></h3>
 
 			<label for="birthday">Name:</label>
-			<div class="container" style="width:400px;">
+			<div class="container" style="width:60%;">
 
 				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_uname'))
@@ -43,7 +43,7 @@
 					id="lastname" placeholder="Enter lastname">
 			</div>
 			<label for="birthday">Password:</label>
-			<div class="container" style="width:400px;">
+			<div class="container" style="width:60%;">
 
 				@if ($errorlist!='none')
 					@if (strpos($errorlist,'null_pass'))

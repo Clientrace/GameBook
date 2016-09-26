@@ -13,10 +13,13 @@
 
 	<div class="col-md-9">
 		<div class="well" style="height:60%;">
+			<img src="/assets/system/controller-md.png" class="img-thumbnail" style="width:15%;height:15%;">
 			<h3>About</h3>
 			Genre: <span class="badge">{{$game->genre}}</span><br>
 			Created on: {{$game->date_created}}<br>
-			Developer: {{$devinfo[0]->first_name}} {{$devinfo[0]->last_name}} " {{$dev->username}} "
+			Developer: {{$devinfo[0]->first_name}} {{$devinfo[0]->last_name}} " {{$dev->username}} "<br>
+			<span class="badge">{{$game->likes}}</span><img src="/assets/system/like.png" class="img-thumbnail" style="width:5%;height:5%;">
+			<span class="badge">{{$game->likes}}</span><img src="/assets/system/dislike.png"class="img-thumbnail"  style="width:5%;height:5%;">
 			<div class="well">
 				{{$game->description}}
 			</div>

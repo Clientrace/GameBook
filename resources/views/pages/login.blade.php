@@ -7,6 +7,7 @@
 		<h2> Registered Succesfully! </h2>
 	@endif
 	<div class="container" style="width: 40%; margin-top:5%;">
+		<img src="/assets/system/logo.png" class="img-thumbnail" style="width:30%;height:30%;">
 		<form role="form" method="POST" action="/home">
 			<div class="form-group">
 

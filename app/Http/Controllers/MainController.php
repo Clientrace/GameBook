@@ -34,7 +34,6 @@ class MainController extends Controller
 
         $recentgames = Game::all();
 
-        $user = UserInfo::where("user_id",$id)->get();
-    	return view("pages.main",compact('log','user','topgames','recentgames'));
+    	return view("pages.main",compact('log','topgames','recentgames'));
     }
 }
