@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>2048</title>
 
-  <link href="games/2048/css/main.css" rel="stylesheet" type="text/css">
+  <link href="/games/2048/css/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
@@ -85,15 +85,15 @@
     </p>
   </div>
 
-  <script src="games/2048/js/bind_polyfill.js"></script>
-  <script src="games/2048/js/classlist_polyfill.js"></script>
-  <script src="games/2048/js/animframe_polyfill.js"></script>
-  <script src="games/2048/js/keyboard_input_manager.js"></script>
-  <script src="games/2048/js/html_actuator.js"></script>
-  <script src="games/2048/js/grid.js"></script>
-  <script src="games/2048/js/tile.js"></script>
-  <script src="games/2048/js/local_storage_manager.js"></script>
-  <script src="games/2048/js/game_manager.js"></script>
-  <script src="games/2048/js/application.js"></script>
+  <script src="/games/2048/js/bind_polyfill.js"></script>
+  <script src="/games/2048/js/classlist_polyfill.js"></script>
+  <script src="/games/2048/js/animframe_polyfill.js"></script>
+  <script src="/games/2048/js/keyboard_input_manager.js"></script>
+  <script src="/games/2048/js/html_actuator.js"></script>
+  <script src="/games/2048/js/grid.js"></script>
+  <script src="/games/2048/js/tile.js"></script>
+  <script src="/games/2048/js/local_storage_manager.js"></script>
+  <script src="/games/2048/js/game_manager.js"></script>
+  <script src="/games/2048/js/application.js"></script>
 </body>
 </html>

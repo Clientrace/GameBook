@@ -44,6 +44,11 @@ class UserProfileController extends Controller
     		$id = $request->session()->get('userid');
     		$user = UserInfo::where('user_id',$id)->update(array('picname'=>$filename));
 		}
-        return view("pages.userprofile");
+
+
+        $id = $request->session()->get('userid');
+        $user = UserInfo::where("user_id",$id)->get();
+        $acc = Account::find($id);
+        return view("pages.user_profile",compact('user','acc'));
     }
 }

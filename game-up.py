@@ -12,8 +12,12 @@ import os
 game_name = input()
 
 #make game directories
-os.mkdir("public/games/"+game_name)
-os.mkdir("resources/views/games/"+game_name)
+try:
+	os.mkdir("public/games/"+game_name)
+	os.mkdir("resources/views/games/"+game_name)
+except:
+	print("Directories Found")
+
 
 #move game index to views folder
 shutil.move("public/game_uploads/"+game_name+"/index.php","resources/views/games/"+game_name)
@@ -23,8 +27,5 @@ shutil.move("public/game_uploads/"+game_name+"/games/"+game_name+"/css","public/
 
 #move game js folder to public.js folder
 shutil.move("public/game_uploads/"+game_name+"/games/"+game_name+"/js","public/games/"+game_name)
-
-#remove the remaning files
-os.rmdir("public/game_uploads"/+game_name)
 
 print("DONE!")
