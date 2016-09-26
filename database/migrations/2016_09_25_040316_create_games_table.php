@@ -23,6 +23,7 @@ class CreateGamesTable extends Migration
             $table->string('description');
             $table->string('genre');
             $table->string('picname');
+            $table->boolean('reviewed');
             $table->timestamp('date_created');
             $table->timestamps();
         });

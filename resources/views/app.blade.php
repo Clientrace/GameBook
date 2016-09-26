@@ -3,7 +3,7 @@
 <title>Gamebook</title>
 <head>
 	<meta charset="UTF-8">
-	<link href="css/app.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
 </head>
 
 <header>
@@ -65,6 +65,6 @@
 </footer>
 
 <!--Bootstrap core Javascript-->
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 
 </html>
