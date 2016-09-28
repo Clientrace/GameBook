@@ -21,7 +21,8 @@ class MainController extends Controller
     	$log = $request->session()->get('log');
     	$id = $request->session()->get('userid');
     	$user = UserInfo::where("user_id",$id)->get();
-    	return view("pages.main",compact('log','user','topgames','recentgames'));
+        $page = 0;
+    	return view("pages.main",compact('log','user','topgames','recentgames','page'));
         
     }
 
@@ -30,5 +31,32 @@ class MainController extends Controller
     	$request->session()->put('log',false);
         $regi = false;
     	return view("pages.login",compact('regi'));
+    }
+
+    public function puzzle(Request $request){
+        $games = Game::where("genre","PUZZLE")->get();
+        $log = $request->session()->get('log');
+        $id = $request->session()->get('userid');
+        $user = UserInfo::where("user_id",$id)->get();
+        $page = 1;
+        return view("pages.main",compact('log','user','games','recentgames','page'));
+    }
+
+    public function action(Request $request){
+        $games = Game::where("genre","ACTION")->get();
+        $log = $request->session()->get('log');
+        $id = $request->session()->get('userid');
+        $user = UserInfo::where("user_id",$id)->get();
+        $page = 2;
+        return view("pages.main",compact('log','user','games','recentgames','page'));
+    }
+
+    public function strategy(Request $request){
+        $games = Game::where("genre","STRATEGY")->get();
+        $log = $request->session()->get('log');
+        $id = $request->session()->get('userid');
+        $user = UserInfo::where("user_id",$id)->get();
+        $page = 3;
+        return view("pages.main",compact('log','user','games','recentgames','page'));
     }
 }

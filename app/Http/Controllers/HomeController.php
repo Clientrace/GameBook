@@ -10,12 +10,15 @@ use App\Account;
 
 use App\UserInfo;
 
+use App\Game;
+
 
 class HomeController extends Controller
 {
     //
     public function index(Request $request){
     	$userid = $request->session()->get('userid');
+        $games = Game::all();
         $log = $request->session()->get('log');
 
         if($log==false)
@@ -24,12 +27,13 @@ class HomeController extends Controller
         $account = Account::find($userid);
         $user = UserInfo::where('user_id',$userid)->get();
 
-        return view("pages.home",compact('user','account','log'));
+        return view("pages.home",compact('user','account','log','games'));
     }
 
     public function login(Request $request){
     	$accounts = Account::where('username',$request['username'])->get();
     	$accounts = $accounts->where('password',$request['password']);
+        $games = Game::all();
         
     	if($accounts->all()==null){
             $regi = false;
@@ -46,7 +50,7 @@ class HomeController extends Controller
 
         $log = true;
         
-        return view("pages.home",compact('user','account','log'));
+        return view("pages.home",compact('user','account','log','games'));
     }
 
 }

@@ -38,7 +38,24 @@
 
 				</div>
 			</div>
+
 			<div class="col-md-9">
+			@if($acc->type==1)
+			<div class="well">
+					<b>Game Uploads </b>
+					<div class="well" style="overflow:scroll;">
+						<div class="row">
+							@foreach ($likes as $like)
+								<div class="col-md-2">
+									<?php $game = $games->where('id',$like->gameid)->first();?>
+									<a href="/game/{{$like->gameid}}"><img src="/assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a>
+								</div>
+							@endforeach
+						</div>
+					</div>
+					<a href="/upload" class="btn btn-default btn-lg" role="button">Upload</a>
+				</div>
+			@endif
 				<div class="well">
 					<b>Reviews </b>
 					<div class="well" style="overflow:scroll;">

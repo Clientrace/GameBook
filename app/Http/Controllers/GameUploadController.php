@@ -10,11 +10,18 @@ use Carbon\Carbon;
 
 use App\Game;
 
+use App\Account;
+
 class GameUploadController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $page = 0;
-    	return view('pages.game_upload',compact('page'));
+        $type = Account::find($request->session()->get('userid'));
+        $type = $type->type;
+        if($type==1)
+    	   return view('pages.game_upload',compact('page'));
+        else
+            return redirect("/");
     }
 
     public function store(Request $request){

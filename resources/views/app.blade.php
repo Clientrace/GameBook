@@ -28,6 +28,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+          	<form class="navbar-form navbar-left" role="search" action="/game" method="POST">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search Game" name="name">
+				</div>
+				<button type="submit" class="btn btn-default" name="_token" value="{{ csrf_token() }}">GO</button>
+			</form>
           	@yield('nav')
           </ul>
         </div><!--/.nav-collapse -->

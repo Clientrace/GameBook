@@ -1,0 +1,181 @@
+@color1: #E0E2E4;
+@color2: #303030;
+@black-opaque: rgba(0,0,0,0.3);
+@bg: #1E1E1E;
+@brown: #544242;
+@window_x:960px;
+@window_y:640px;
+@button-color: #94B84D;
+@button-hover-color: #9FBF5F;
+@game-bg-color: #B3B48E;
+
+@font-face {
+    font-family: 'Higher';
+    src: url(fonts/Higher.ttf);
+}
+
+@font-face {
+    font-family: 'Square';
+    src: url(fonts/Square.ttf);
+}
+
+.standard-text(@size: 25px) {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: @size;
+    text-shadow: 2px 2px @black-opaque;
+    letter-spacing: -1px;
+    color: @color1;
+    font-family: Square;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.big-text {
+    font-family: 'Higher';
+    font-size: 150px;
+    text-shadow: 5px 5px @black-opaque;
+    letter-spacing: 0px;
+    color: @color1;
+}
+
+.comment-text {
+    font-family: 'Square';
+    letter-spacing: 0px;
+    font-size: 15px;
+    text-shadow: 1px 1px @black-opaque;
+    color: #333;
+}
+
+.standard-shadow(@offset: 5px, @alpha: 0.3) {
+    box-shadow:@offset @offset rgba(0,0,0,@alpha);
+}
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.gradient (@startColor: @bg, @endColor: @brown) {
+    background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.center-div {
+    margin:0px auto;
+}
+
+body {
+    .standard-text;
+	background-color: @bg;
+}
+
+#GameWindow {
+    .center-div;
+    .rounded-corners;
+    .standard-shadow;
+    width:@window_x;
+    height:@window_y;
+    border:10px solid @color2;
+    background-color: @game-bg-color;
+}
+
+#GameHud {
+    .center-div;
+    .rounded-corners;
+    .standard-shadow;
+    height: 50px;
+    width: @window_x;
+    border:10px solid @color2;
+    background-color: @bg;
+    margin-bottom: 5px;
+    
+    font-family: 'Higher';
+    
+}
+
+#StartMenu {
+    .center-div;
+    .rounded-corners;
+    .standard-shadow;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    height: 150px;
+    width: 400px;
+    margin-top: -75px;
+    margin-left: -200px;
+    border: 10px solid @color2;
+    background-color: @game-bg-color;
+    text-align:center;
+    padding-top:10px;
+
+    .button {
+        .rounded-corners;
+        .center-div;
+        .standard-text;
+        box-shadow:5px 5px #669900;
+        background-color: @button-color;
+        width: 200px;
+        height: 30px;
+        text-align:center;
+        margin-top: 10px;
+        padding-top: 5px;
+        cursor:pointer;
+        &:hover {
+            background-color: @button-hover-color;
+        }
+    }
+    
+    div {
+        .comment-text;
+        .center-div;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+}
+
+#Header {
+    .center-div;
+    .big-text;
+    text-align:center;
+}
+
+#Footer {
+    div {
+        .center-div;
+        .big-text; 
+        max-width:1000px;
+        font-family: 'Square';
+    }
+    .gradient;
+    .center-div;
+    .standard-text(10px);
+    height: 600px;
+    margin-top:100px;
+    text-align:center;
+    
+}
+
+a {
+    .standard-text;
+    text-decoration: none;
+    border-bottom:none;
+    
+    &:hover {
+        border-bottom: 3px solid @color1;
+        box-shadow: 0px 5px rgba(0,0,0,0.3);
+    }
+    
+}
+
+* {
+  
+}

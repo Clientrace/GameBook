@@ -128,6 +128,11 @@ class GameProfileController extends Controller
         return redirect("/game/".$id);
     }
 
+    public function search(Request $request){
+        $game = Game::where("name",$request['name'])->first();
+        return redirect("/game/".$game->id);
+    }
+
     public function commentlike(Request $request,$g_id,$c_id){
         $log = $request->session()->get('log');
         $game = Game::find($g_id);

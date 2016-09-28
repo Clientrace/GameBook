@@ -51,3 +51,14 @@ Route::get('play/{name}','PlayController@index');
 
 Route::get('game/comment_like/{gcid}/{cid}','GameProfileController@commentlike');
 
+Route::post('game','GameProfileController@search');
+
+Route::get('ranking','UserRankingController@index');
+
+Route::get('about','AboutController@index');
+
+Route::get('filter/puzzle','MainController@puzzle');
+
+Route::get('filter/action','MainController@action');
+
+Route::get('filter/strategy','MainController@strategy');
