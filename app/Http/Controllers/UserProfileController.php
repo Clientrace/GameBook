@@ -8,18 +8,31 @@ use App\Http\Requests;
 
 use App\UserInfo;
 
+use App\Comment;
+
 use App\Account;
+
+use App\Game;
+
+use App\GameLike;
 
 class UserProfileController extends Controller
 {
     public function index(Request $request){
     	$id = $request->session()->get('userid');
     	$log = $request->session()->get('log');
+        $games = Game::all();
+        $likes = GameLike::where('userid',$id)->get();
+        $likes = $likes->where('liked',true);
+        $dislikes = GameLike::where('userid',$id)->get();
+        $dislikes = $dislikes->where('liked',false);
+        $accsinfo = UserInfo::all();
+        $comments = Comment::where('userid',$id)->get();
     	if(!$log)
     		return redirect("/");
     	$user = UserInfo::where("user_id",$id)->get();
     	$acc = Account::find($id);
-    	return view("pages.user_profile",compact('user','acc'));
+    	return view("pages.user_profile",compact('user','acc','comments','games','accsinfo','likes','dislikes'));
     }
 
     public function updatePic(Request $request){
@@ -48,7 +61,14 @@ class UserProfileController extends Controller
 
         $id = $request->session()->get('userid');
         $user = UserInfo::where("user_id",$id)->get();
+        $comments = Comment::where('userid',$id)->get();
+        $likes = GameLike::where('userid',$id)->get();
+        $likes = $likes->where('liked',true);
+        $dislikes = GameLike::where('userid',$id)->get();
+        $dislikes = $dislikes->where('liked',false);
         $acc = Account::find($id);
-        return view("pages.user_profile",compact('user','acc'));
+        $games = Game::all(); 
+        $accsinfo = UserInfo::all();
+        return view("pages.user_profile",compact('user','acc','comments','games','accsinfo','likes','dislikes'));
     }
 }

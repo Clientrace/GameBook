@@ -43,6 +43,11 @@ Route::get('game/{id}','GameProfileController@index');
 
 Route::post('game/{id}','GameProfileController@addcomment');
 
+Route::get('game/{id}/like','GameProfileController@gamelike');
+
+Route::get('game/{id}/dislike','GameProfileController@gamedislike');
+
 Route::get('play/{name}','PlayController@index');
 
+Route::get('game/comment_like/{gcid}/{cid}','GameProfileController@commentlike');
 

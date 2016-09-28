@@ -18,8 +18,8 @@
 			Genre: <span class="badge">{{$game->genre}}</span><br>
 			Created on: {{$game->date_created}}<br>
 			Developer: {{$devinfo[0]->first_name}} {{$devinfo[0]->last_name}} " {{$dev->username}} "<br>
-			<span class="badge">{{$game->likes}}</span><img src="/assets/system/like.png" class="img-thumbnail" style="width:5%;height:5%;">
-			<span class="badge">{{$game->likes}}</span><img src="/assets/system/dislike.png"class="img-thumbnail"  style="width:5%;height:5%;">
+			<span class="badge">{{$likes}}</span><a href="/game/{{$game->id}}/like"><img src="/assets/system/like.png" class="img-thumbnail" style="width:5%;height:5%;"></a>
+			<span class="badge">{{$dislikes}}</span><a href="/game/{{$game->id}}/dislike"><img src="/assets/system/dislike.png"class="img-thumbnail"  style="width:5%;height:5%;"></a>
 			<div class="well">
 				{{$game->description}}
 			</div>
@@ -41,6 +41,8 @@
 				</div>
 				<div class="row">
 					<span class="badge">{{$comment->date_created}}</span>
+					<a href="/game/comment_like/{{$game->id}}/{{$comment->id}}" class="btn btn-default btn-xs" role="button">Like</a>
+					<span class="badge">{{$comment->like}}</span>
 				</div>
 			</div>
 		@endforeach

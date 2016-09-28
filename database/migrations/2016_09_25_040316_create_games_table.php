@@ -18,9 +18,6 @@ class CreateGamesTable extends Migration
             $table->integer('dev_id');
             $table->string('name');
             $table->integer('views');
-            $table->integer('likes');
-            $table->integer('dislikes');
-            $table->integer('dislikes');
             $table->string('description');
             $table->string('genre');
             $table->string('picname');

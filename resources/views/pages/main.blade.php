@@ -42,7 +42,7 @@ The games here are developed by opensource developer. Enjoy their game and have 
 				<div class="row">
 					@foreach ($topgames as $game)
 						@if(!$game->reviewed)
-						<div class="col-md-3" style="width:30%;">
+						<div class="col-md-3" style="width:30%;height:30%;">
 							<div class="well">
 								<label> {{$game->name}} </label><br>
 								<a href="/game/{{$game->id}}"><img src="/assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a><br>

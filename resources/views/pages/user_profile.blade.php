@@ -25,7 +25,14 @@
 
 					<div class="progress" style="height:2%;">
 						<div class="progress-bar" role="progressbar" aria-valuenow="0"
-							aria-valuemin="0" aria-valuemax="1000" style="width: {{$user[0]->experience%1000}}%;">
+							<?php 
+								$exp = 0;
+								if($user[0]->experience==0)
+									$exp=0;
+								else
+									$exp = 1000/$user[0]->experience;
+							 ?>
+							aria-valuemin="0" aria-valuemax="1000" style="width: {{$exp}}%;">
 						</div>
 					</div>
 
@@ -34,12 +41,46 @@
 			<div class="col-md-9">
 				<div class="well">
 					<b>Reviews </b>
+					<div class="well" style="overflow:scroll;">
+						@foreach ($comments as $comment)
+							<div class="well" style="width:80%;">
+								<div class="row">
+									<?php $game = $games->where('id',$comment->gameid)->first();?>
+									<label>{{$game->name}} : </label>
+									{{$comment->description}}
+								</div>
+								<div class="row">
+									<span class="badge">{{$comment->date_created}}</span>
+								</div>
+							</div>
+						@endforeach
+					</div>
 				</div>
 				<div class="well">
 					<b>Likes </b>
+					<div class="well" style="overflow:scroll;">
+						<div class="row">
+							@foreach ($likes as $like)
+								<div class="col-md-2">
+									<?php $game = $games->where('id',$like->gameid)->first();?>
+									<a href="/game/{{$like->gameid}}"><img src="/assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a>
+								</div>
+							@endforeach
+						</div>
+					</div>
 				</div>
 				<div class="well">
-					<b>Games Played </b>
+					<b>Dislikes </b>
+					<div class="well" style="overflow:scroll;">
+						<div class="row">
+							@foreach ($dislikes as $dislike)
+								<div class="col-md-2">
+									<?php $game = $games->where('id',$dislike->gameid)->first();?>
+									<a href="/game/{{$dislike->gameid}}"><img src="/assets/gamelogo/{{$game->picname}}" class="img-thumbnail"></a>
+								</div>
+							@endforeach
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

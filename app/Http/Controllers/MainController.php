@@ -28,12 +28,7 @@ class MainController extends Controller
     public function logout(Request $request){
     	$request->session()->forget('userid');
     	$request->session()->put('log',false);
-    	$log = false;
-
-        $topgames = Game::all();
-
-        $recentgames = Game::all();
-
-    	return view("pages.main",compact('log','topgames','recentgames'));
+        $regi = false;
+    	return view("pages.login",compact('regi'));
     }
 }

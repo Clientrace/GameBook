@@ -39,9 +39,9 @@ class GameUploadController extends Controller
         //picture name
         $game = new Game;
         $file = $request->file('file');
+        $filename = '';
         if($request->file('file')->isValid()){
             $done = false;
-            $filename = '';
             while(!$done){
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 $charactersLength = strlen($characters);
@@ -55,16 +55,14 @@ class GameUploadController extends Controller
                     $done = true;
             }
             $request->file('file')->move("assets/gamelogo",$randomString);
-            $game->picname = $filename;
         }
 
         $game->dev_id=$request->session()->get('userid');
         $game->name=$request['game_name'];
         $game->views=0;
-        $game->likes=0;
-        $game->dislikes=0;
         $game->description=$request['description'];
         $game->genre=$request['genre'];
+        $game->picname = $filename;
         $game->reviewed = false;
         $game->date_created = Carbon::now();
         $game->save();
